@@ -1,0 +1,81 @@
+@use "@styles/mixins" as *;
+
+.lootery-instructions {
+    max-width: $content-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__title {
+        margin-bottom: 20px;
+
+        @include media-min(mob-md) {
+            margin-bottom: 30px;
+        }
+
+        @include media-min(mob) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include media-min(mob) {
+            gap: 20px;
+        }
+    }
+
+    &__note {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+
+        &-icon {
+            flex: 0 0 auto;
+
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        &-text {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.4;
+            color: $color-accent;
+        }
+
+        @include media-min(mob-md) {
+            margin-left: 5.21%;
+            margin-right: 5.21%;
+
+            &-icon {
+                svg {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            &-text {
+                font-size: 14px;
+            }
+        }
+
+        @include media-min(mob) {
+            margin-top: 34px;
+            margin-left: 7.38255%;
+            margin-right: 7.38255%;
+            align-items: center;
+            gap: 17px;
+
+            &-text {
+                font-size: 18px;
+            }
+        }
+    }
+}

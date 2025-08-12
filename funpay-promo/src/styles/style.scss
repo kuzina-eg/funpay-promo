@@ -1,0 +1,35 @@
+// Variables
+@use "vars";
+
+// Vendor
+//@use "vendor";
+
+// Base
+@use "./common/base";
+@use "./common/utilites";
+
+// Common elements
+@use "./common/form";
+
+// Plugins
+@use "./plugins/fancybox";
+
+// Modules
+@use "./modules/button";
+
+// Site blocks
+@use "./blocks/accordion";
+@use "./blocks/countdown";
+@use "./blocks/prizeItem";
+@use "./blocks/ticketText";
+@use "./blocks/instructionItem";
+@use "./blocks/tableTicket";
+
+// Site sections
+@use "./sections/promo";
+@use "./sections/prizes";
+@use "./sections/myTickets";
+@use "./sections/instructions";
+@use "./sections/faq";
+
+

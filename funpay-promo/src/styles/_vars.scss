@@ -10,7 +10,7 @@
     --text-size-md: 1rem; // 16px
     --text-size-md-all: 16px;
     --text-size-lg: 1.125rem; // 18px
-    --text-size-xl: 1.25rem; // 20px
+    --text-size-xl: 1.25rem; // 20px +
 
     --title-size-xs: 1.142857rem;
     --title-size-sm: 16px;
@@ -34,7 +34,7 @@
     --color-base: #151515;
     --color-base-rgb: 21,21,21;
     //--color-gradient-start: #25ABE4;
-    --color-accent: #255FE4;
+    --color-accent: #255FE4; //+
     --color-accent-rgb: 37,95,228;
     //--color-accent-all: #255FE4;
     --color-accent-hover: #0E47CB;
@@ -43,15 +43,15 @@
     //--color-second-rgb: 168,191,244;
     //--color-second-primary: #D3DFF9;
     //--color-second-light: #A8BFF4;
-    --color-white: #FFFFFF;
+    --color-white: #FFFFFF; //+
     //--color-white-all: #FFFFFF;
-    --color-white-rgb: 255,255,255;
-    --color-black: #07122E;
+    --color-white-rgb: 255,255,255; //+
+    --color-black: #07122E; //+
     //--color-black-all: #07122E;
-    //--color-grey-dark: #364157;
-    --color-grey: #666E81;
+    --color-grey-dark: #364157; //+
+    --color-grey: #666E81; //+
     //--color-grey-all: #666E81;
-    --color-grey-light: #959CAA;
+    --color-grey-light: #959CAA; //+
     //--color-grey-light-all: #959CAA;
     //--color-grey-light-second: #F5F6FB;
     //--color-footer: #818DA6;
@@ -63,7 +63,7 @@
     --color-border: transparent;
     --color-line: #E9EBF6;
 
-    --background-chat: #FFFFFF;
+    //--background-chat: #FFFFFF;
     --background-backdrop: rgba(0,0,0,.8);
 }
 
@@ -71,18 +71,19 @@
 // Base Settings
 
 :root {
-    --base-background: #F5F6FB;
+    --base-background: #E9EFFC;
     --base-background-rgb: 245,246,251;
     --base-font-family: 'Onest', sans-serif;
-    --base-font-weight: 400;
+    --base-font-weight: 500;
     --base-line-height: 1.5;
     --container-max-width: 1408px;
+    --content-width: 745px;
     --gutters: 16px;
-    --space-sm: 8px;
-    --space: 16px;
+    --space-sm: 10px; //+
+    --space: 20px; //+
     --space-md: 24px;
     --space-lg: 2rem;
-    --space-section: 52px;
+    --space-section: 6.25rem;
     --duration: .3s;
     //--box-shadow-light: 0 4px 40px rgba(35,42,72,.06);
     //--box-shadow: 0 0 10px rgba(0,26,89,.1);
@@ -95,8 +96,8 @@
     //--z-index-modal: 200;
     //--z-index-product-modal: 120;
 
-    @include media(tab) {
-        --space-section: 44px;
+    @include media(mob) {
+        --space-section: 60px;
     }
 
     @include media(mob) {
@@ -125,9 +126,9 @@
     --radius-md: 1.25rem;
     --radius-lg: 1.5rem;
 
-    --button-height-xs: 36px;
-    --button-height-sm: 44px;
-    --button-height: 52px;
+    //--button-height-xs: 36px;
+    //--button-height-sm: 44px;
+    --button-height: 44px; //+
     --button-height-md: 48px;
     --button-height-lg: 60px;
     --input-height-sm: 44px;

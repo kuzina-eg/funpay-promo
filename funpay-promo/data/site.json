@@ -1,0 +1,15 @@
+{
+    "name": "Funpay",
+    "logo": {
+        "width": 187,
+        "height": 31
+    },
+    "pages": [
+        {
+            "name": "Главная",
+            "link": "home.html",
+            "status": "",
+            "disabled": false
+        }
+    ]
+}

@@ -1,0 +1,272 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Picture from '@components/modules/Picture.astro';
+
+import Promo from '@components/sections/Promo.astro';
+import Prizes from '@components/sections/Prizes.astro';
+import MyTickets from '@components/sections/MyTickets.astro';
+import Instructions from '@components/sections/Instructions.astro';
+import Faq from '@components/sections/Faq.astro';
+
+const prizes = [
+    {
+        title: 'Царь-пекарня',
+        count: '1 шт.',
+        image: 'pc',
+        param: 'RTX 5090 + 9800X3D',
+        text: 'Ультимативная сборка с&nbsp;топовой видеокартой. Потянет Героев, любую Готику и&nbsp;даже Скайрим, обмазанный модами.',
+        note: '*Внешний вид приза может отличаться от&nbsp;его изображения в&nbsp;рекламных материалах.',
+    },
+    {
+        title: 'Playstation 5 Pro',
+        count: '3 шт.',
+        image: 'playstation',
+        param: '',
+        text: 'Лучшая консоль Сони для того, чтобы играть в&nbsp;эксклюзивы, которых нет. И&nbsp;в&nbsp;Бладборн!',
+        note: '',
+    },
+    {
+        title: 'Xbox Series X',
+        count: '3 шт.',
+        image: 'xbox',
+        param: '',
+        text: 'Стильная черная коробка, которая позволит напиться из&nbsp;Геймпаса. Можно взять с&nbsp;собой на&nbsp;дачу или украсить ею&nbsp;квартиру.',
+        note: '',
+    },
+    {
+        title: 'iPhone 16 Pro Max',
+        count: '3 шт.',
+        image: 'iphone',
+        param: '1 TB',
+        text: 'Самый большой агрегат Тима Кука. Поможет снимать рилзы, выпендриваться перед пацанами и&nbsp;играть в&nbsp;любимые игры. Бем мам, пап и&nbsp;кредитов.',
+        note: '*Внешний вид приза может отличаться от&nbsp;его изображения в&nbsp;рекламных материалах.',
+    },
+    {
+        title: 'Nintendo Switch&nbsp;2',
+        count: '3 шт.',
+        image: 'nintendo',
+        param: '',
+        text: 'Новенькая портативка от&nbsp;Нинтенды. Mario Kart, Зельда и&nbsp;прочий агуша-гейминг у&nbsp;вас в&nbsp;кровати.',
+        note: '',
+    },
+    {
+        title: 'Steam Deck OLED',
+        count: '3 шт.',
+        image: 'steam',
+        param: '',
+        text: 'Новый формат для любимых игр. Можно поставить Ryse: Son of&nbsp;Rome и&nbsp;думать о&nbsp;Римской империи, не&nbsp;вставая с&nbsp;унитаза.',
+        note: '',
+    },
+    {
+        title: 'Планшет Red Magic Gaming Pad&nbsp;3',
+        count: '3 шт.',
+        image: 'redmagic',
+        param: '24 RAM + 1 TB',
+        text: 'Удобный геймерский планшет: OLED, 165&nbsp;Гц, яркость, как у&nbsp;суперновы. Любимые мобильные дрочильни с&nbsp;максимальным комфортом и&nbsp;fps.',
+        note: '',
+    },
+    {
+        title: 'Наушники Audeze Maxwell',
+        count: '5 шт.',
+        image: 'audeze',
+        param: '',
+        text: 'Лучшая игровая гарнитура. Самое&nbsp;то, чтобы не&nbsp;пропустить шаги соперников в&nbsp;Valorant, а&nbsp;потом с&nbsp;кайфом послушать Сабрину Карпентер.',
+        note: '*Внешний вид приза может отличаться от&nbsp;его изображения в&nbsp;рекламных материалах.',
+    },
+    {
+        title: 'Наушники Moondrop Blessing 3',
+        count: '5 шт.',
+        image: 'moondrop',
+        param: '',
+        text: 'Гибридные затычки с&nbsp;6&nbsp;драйверами. Кто знает, уже всё понял. Для остальных: в&nbsp;них даже Кадышава вкатывает с&nbsp;кайфом.',
+        note: '',
+    },
+    {
+        title: 'Razer Viper V3&nbsp;Pro',
+        count: '10 шт.',
+        image: 'razer',
+        param: '',
+        text: 'Бескомпромиссная годнота от&nbsp;Razer. Купить её&nbsp;на&nbsp;деньги с&nbsp;обедов&nbsp;&mdash; круто, но&nbsp;тяжко. А&nbsp;вот залутать в&nbsp;розыгрыше&nbsp;&mdash; мякотка.',
+        note: '',
+    },
+    {
+        title: 'Игры на сумму до&nbsp;10&nbsp;000&nbsp;₽',
+        count: '50 шт.',
+        image: 'games10',
+        param: '',
+        text: 'Это может быть один AAA-блокбастер, а&nbsp;может быть пачка хентай-паззлов&nbsp;&mdash; всё зависит от&nbsp;ваших вкусов.',
+        note: '',
+    },
+    {
+        title: 'Игры на сумму до&nbsp;5&nbsp;000&nbsp;₽',
+        count: '100 шт.',
+        image: 'games5',
+        param: '',
+        text: 'Хватит на&nbsp;GTA&nbsp;VI (но&nbsp;это не&nbsp;точно) или на&nbsp;целую гору инди-игр.',
+        note: '',
+    },
+]
+
+const myTickets = [
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-1843',
+        tickets: '<span class="text-nowrap">№256-654</span>, <span class="text-nowrap">№648-154</span>, <span class="text-nowrap">№478-007</span>, <span class="text-nowrap">№359-148</span>, <span class="text-nowrap">№457-059</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-1843',
+        tickets: '<span class="text-nowrap">№256-654</span>, <span class="text-nowrap">№648-154</span>, <span class="text-nowrap">№478-007</span>, <span class="text-nowrap">№359-148</span>, <span class="text-nowrap">№457-059</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+]
+
+const instructions = [
+    {
+        num: '1',
+        title: 'Покупайте<br> на&nbsp;FunPay',
+        text: 'Каждые 100&nbsp;руб. добавляют в&nbsp;копилку билет и&nbsp;повышают шанс лутануть что-нибудь классное. В&nbsp;сумме вы&nbsp;можете собрать до&nbsp;50&nbsp;билетов.',
+        buttonText: 'Всё, я за покупками',
+    },
+    {
+        num: '2',
+        title: 'Копите<br> билеты',
+        text: 'Каждый билет может оказаться призовым. Так&nbsp;что&nbsp;с&nbsp;Лутереи можно получить не&nbsp;один, а&nbsp;сразу несколько классных подарков.',
+        buttonText: 'Нужно больше билетов!',
+    },
+    {
+        num: '3',
+        title: 'Дождитесь<br> итогов',
+        text: '16&nbsp;сентября мы&nbsp;загрузим все билеты в&nbsp;барабан и&nbsp;разыграем призы в&nbsp;прямом эфире на&nbsp;Twitch. Присоединяйтесь, чтобы не&nbsp;пропустить эфир.',
+        buttonText: 'Подписываюсь на Twitch',
+    },
+]
+
+const faq = [
+    {
+        title: 'Где посмотреть полные правила розыгрыша?',
+        text: 'Полные правила розыгрыша можно <a href="#">прочитать здесь</a>',
+    },
+    {
+        title: 'После покупки не пришли билеты. Что делать?',
+        text: 'Похоже, что-то пошло не так. Пожалуйста, обратитесь в поддержку. Вам помогут получить недостающие билеты.',
+    },
+    {
+        title: 'В какой валюте учитываются покупки?',
+        text: 'Покупки учитываются в любой валюте.',
+    },
+    {
+        title: 'Я покупал на FunPay, но не знал об акции. Билеты придут?',
+        text: 'Да. В розыгрыше учитываются все покупки, совершенные с 15 августа по 15 сентября. Пожалуйста, нажмите “Участвовать” на главной странице Лутереи и мы начислим билеты за покупки.',
+    },
+    {
+        title: 'Из какой страны можно участвовать?',
+        text: 'Можно участвовать из любой страны.',
+    },
+    {
+        title: 'Я выиграл. Кому написать, чтобы получить приз?',
+        text: 'Поздравляем. Если вы выиграли, мы свяжемся с вами в личных сообщениях на FunPay, чтобы обсудить доставку приза. Самостоятельно никому писать не нужно.',
+    },
+    {
+        title: 'Мой заказ отменили. Билеты за него останутся у меня?',
+        text: 'Нет, билеты, полученные за обнуленный заказ, отзовут. Они не будут участвовать в розыгрыше.',
+    },
+]
+
+---
+<Layout title="Лутерея" bodyClass="lootery">
+
+    <Promo
+        statisticTextStart="Всего"
+        statisticTextLink="билетов"
+        statisticTextLast="в розыгрыше:"
+        statisticValue="135 658 224"
+        title="Лутерея"
+        text="Покупай на&nbsp;FunPay с&nbsp;15&nbsp;августа по&nbsp;15&nbsp;сентября и&nbsp;участвуй в&nbsp;розыгрыше полезного лута"
+        buttonText="Участвовать"
+        buttonTextLogin="Мои билетики"
+        countdownTitle="До конца осталось:"
+        countdownDays="дней"
+        countdownHours="часов"
+        countdownMinutes="минут"
+    ></Promo>
+
+
+    <div class="container">
+        <Prizes
+            items={prizes}
+            modalText="Хотите бустануть свои шансы?<br> Покупайте на FunPay"
+            buttonText="За покупками"
+        ></Prizes>
+
+        <MyTickets
+            title="Мои билеты"
+            myTicketsText1="Каждые"
+            myTicketsText2="100 рублей"
+            myTicketsText3="потраченные на&nbsp;FunPay, приносят"
+            myTicketsText4="1 билет."
+            note="Чем больше билетов собрано, тем выше шанс залутать ценные призы."
+            myTicketsBoxTitle1="У вас"
+            myTicketsBoxTitle2="37 билетиков"
+            myTicketsBoxText="<p>Всего участников: <span class='ticket-participants'>235 6589</span></p><p>Среднее число билетов на участника: <span class='ticket-average'>15</span></p>"
+            buttonText="Посмотреть мои билеты"
+            items={myTickets}
+            tableParamName="Заказ"
+            tableValueName="Билеты"
+        ></MyTickets>
+
+        <Instructions
+            title="Как участвовать?"
+            items={instructions}
+            note="Важно: в&nbsp;розыгрыше учитываются покупки, совершённые с&nbsp;15&nbsp;августа по&nbsp;15&nbsp;сентября. Покупайте на&nbsp;FunPay и&nbsp;лутайте!"
+        ></Instructions>
+
+        <Faq
+            title="Остались вопросы?"
+            items={faq}
+        ></Faq>
+    </div>
+
+    <Fragment slot="modals">
+        <!--
+        <ModalLogin class="modal-login"></ModalLogin>
+        -->
+    </Fragment>
+</Layout>
