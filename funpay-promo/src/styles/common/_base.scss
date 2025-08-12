@@ -143,5 +143,14 @@ a, button, select {
 
 
 .lootery {
+    #header,
+    .wrapper-footer {
+        background: $color-white;
+    }
+
+    .navbar-default,
+    #footer {
+        border-color: transparent;
+    }
     //background-color: ;
 }
