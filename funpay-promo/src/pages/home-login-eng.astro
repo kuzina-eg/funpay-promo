@@ -1,0 +1,267 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Picture from '@components/modules/Picture.astro';
+
+import Promo from '@components/sections/Promo.astro';
+import Prizes from '@components/sections/Prizes.astro';
+import MyTickets from '@components/sections/MyTickets.astro';
+import Instructions from '@components/sections/Instructions.astro';
+import Faq from '@components/sections/Faq.astro';
+
+const prizes = [
+    {
+        title: 'The ultimate gaming rig',
+        count: '1 pcs.',
+        image: 'pc',
+        param: 'RTX 5090 + 9800X3D',
+        text: 'A&nbsp;beast under the hood for the most demanding games. From the carnage of&nbsp;Battlefield 6&nbsp;to&nbsp;the heavily modded peace and quiet of&nbsp;Skyrim&nbsp;&mdash; it&nbsp;can handle&nbsp;it.',
+        note: '*Appearance may differ from promo images.',
+    },
+    {
+        title: 'Playstation 5 Pro',
+        count: '3 pcs.',
+        image: 'playstation',
+        param: '',
+        text: 'Sony’s finest. For elusive exclusive enjoyers and coping fans of Bloodborne&nbsp;2.',
+        note: '',
+    },
+    {
+        title: 'Xbox Series X',
+        count: '3 pcs.',
+        image: 'xbox',
+        param: '',
+        text: 'A&nbsp;sleek black box that still can put up&nbsp;a&nbsp;fight. Game Pass binge-machine and just a&nbsp;nice decor piece to&nbsp;look&nbsp;at.',
+        note: '',
+    },
+    {
+        title: 'iPhone 16 Pro Max',
+        count: '3 pcs.',
+        image: 'iphone',
+        param: '1 TB',
+        text: 'Tim Cook&rsquo;s baddest. For filming Reels, flexing, and gaming&nbsp;&mdash; no&nbsp;loans required.',
+        note: '*Appearance may differ from promo images.',
+    },
+    {
+        title: 'Nintendo Switch&nbsp;2',
+        count: '3 pcs.',
+        image: 'nintendo',
+        param: '',
+        text: 'Nintendo&rsquo;s latest handheld. The peak of&nbsp;cozy gaming for banana and karting lovers.',
+        note: '',
+    },
+    {
+        title: 'Steam Deck OLED',
+        count: '3 pcs.',
+        image: 'steam',
+        param: '',
+        text: 'Your favorite&nbsp;PC games at&nbsp;your fingertips. Anywhere and anytime. Even during your busy times in&nbsp;the bathroom.',
+        note: '',
+    },
+    {
+        title: 'Tablet Red Magic Gaming Pad&nbsp;3',
+        count: '3 pcs.',
+        image: 'redmagic',
+        param: '24 RAM + 1 TB',
+        text: 'A&nbsp;gamer&rsquo;s dream tablet. OLED, 165Hz, bright as&nbsp;a&nbsp;supernova. Mobile grind? Maxed out.',
+        note: '',
+    },
+    {
+        title: 'Headphones Audeze Maxwell',
+        count: '5 pcs.',
+        image: 'audeze',
+        param: '',
+        text: 'Top-tier gaming headset. Crystal clear footsteps in&nbsp;Valorant and high-def vocals of&nbsp;your favourite Manchild. A&nbsp;Sabrina Carpenter&rsquo;s latest single, not your teammate. Obviously.',
+        note: '*Appearance may differ from promo images.',
+    },
+    {
+        title: 'Headphones Moondrop Blessing&nbsp;3',
+        count: '5 pcs.',
+        image: 'moondrop',
+        param: '',
+        text: '6-driver hybrids. If&nbsp;you know, you know. If&nbsp;not&nbsp;&mdash; just know they make every Soundcloud drop sound fire.',
+        note: '',
+    },
+    {
+        title: 'Razer Viper V3&nbsp;Pro',
+        count: '10 pcs.',
+        image: 'razer',
+        param: '',
+        text: 'For control freaks and flick masters. Razer&rsquo;s essential for esports inspired.',
+        note: '',
+    },
+    {
+        title: 'Games worth up to 10&nbsp;000&nbsp;RUB',
+        count: '50 pcs.',
+        image: 'games10',
+        param: '',
+        text: 'Be&nbsp;it&nbsp;an&nbsp;AAA-blockbuster or&nbsp;a&nbsp;couple of&nbsp;hentai puzzles&nbsp;&mdash; whatever your tastes desire.',
+        note: '',
+    },
+    {
+        title: 'Games worth up to 5&nbsp;000&nbsp;RUB',
+        count: '100 pcs.',
+        image: 'games5',
+        param: '',
+        text: 'Enough for GTA&nbsp;VI (mayhaps) or&nbsp;a&nbsp;tonload of&nbsp;indie games.',
+        note: '',
+    },
+]
+
+const myTickets = [
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-1843',
+        tickets: '<span class="text-nowrap">№256-654</span>, <span class="text-nowrap">№648-154</span>, <span class="text-nowrap">№478-007</span>, <span class="text-nowrap">№359-148</span>, <span class="text-nowrap">№457-059</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-1843',
+        tickets: '<span class="text-nowrap">№256-654</span>, <span class="text-nowrap">№648-154</span>, <span class="text-nowrap">№478-007</span>, <span class="text-nowrap">№359-148</span>, <span class="text-nowrap">№457-059</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+    {
+        orderNumber: '#4332-4852',
+        tickets: '<span class="text-nowrap">№648-221</span>, <span class="text-nowrap">№263-399</span>, <span class="text-nowrap">№359-452</span>',
+    },
+]
+
+const instructions = [
+    {
+        num: '1',
+        title: 'Make a&nbsp;purchase on&nbsp;FunPay',
+        text: 'Every 100&nbsp;RUB earns you 1&nbsp;ticket&nbsp;&mdash; the more you spend, the better your chances of&nbsp;scoring awesome loot. You can collect up&nbsp;to&nbsp;50&nbsp;tickets total.',
+        buttonText: 'Let’s go shopping',
+    },
+    {
+        num: '2',
+        title: 'Stack your tickets',
+        text: 'Each ticket is&nbsp;a&nbsp;chance to&nbsp;win.<br> Yes, you can win multiple prizes. Because why not?',
+        buttonText: 'Need more tickets!',
+    },
+    {
+        num: '3',
+        title: 'Watch the draw live stream',
+        text: 'On&nbsp;September&nbsp;16, we&rsquo;ll spin the loot drum live on&nbsp;Twitch and draw the winners.<br> Tune in&nbsp;so&nbsp;you don&rsquo;t miss the action!',
+        buttonText: 'Follow us on Twitch',
+    },
+]
+
+const faq = [
+    {
+        title: 'Where can&nbsp;I read the full rules?',
+        text: 'You can find the full rules <a href="#">here</a>.',
+    },
+    {
+        title: 'Didn&rsquo;t get your tickets after the purchase?',
+        text: 'Something went wrong. Contact support&nbsp;&mdash; they&rsquo;ll help you get your missing tickets.',
+    },
+    {
+        title: 'Purchases in&nbsp;what currencies are eligible for participation?',
+        text: 'Purchases with any currencies are eligible for participation.',
+    },
+    {
+        title: 'I&nbsp;bought something but didn&rsquo;t know about the event. Will I&nbsp;still get tickets?',
+        text: 'You bet! All purchases between August 15&nbsp;&mdash; September 15&nbsp;count. Just click &laquo;Join&raquo; on&nbsp;the Loottery page and we&rsquo;ll add your tickets.',
+    },
+    {
+        title: 'From which country can I&nbsp;participate?',
+        text: 'You can participate from any country.',
+    },
+    {
+        title: 'I&nbsp;won! Who do&nbsp;I contact to&nbsp;claim the prize?',
+        text: 'Congrats! If&nbsp;you win, we&rsquo;ll DM&nbsp;you on&nbsp;FunPay to&nbsp;arrange your delivery.<br> No&nbsp;need to&nbsp;reach&nbsp;us.',
+    },
+    {
+        title: 'My&nbsp;order got canceled. Do&nbsp;I&nbsp;still keep the tickets?',
+        text: 'Nope. Tickets from canceled orders will be&nbsp;revoked and won&rsquo;t count in&nbsp;the draw.',
+    },
+]
+
+---
+<Layout title="Лутерея" bodyClass="lootery">
+
+    <Promo
+        statisticTextStart="Total"
+        statisticTextLink="tickets"
+        statisticTextLast="in the draw:"
+        statisticValue="135&nbsp;658&nbsp;224"
+        title="Loottery"
+        text="Shop on&nbsp;FunPay between August&nbsp;15 and September&nbsp;15 and&nbsp;enter the draw for some juicy loot!"
+        buttonText="Join the Loottery"
+        buttonTextLogin="My tickets"
+        countdownTitle="Time left:"
+        countdownDays="days"
+        countdownHours="hours"
+        countdownMinutes="minutes"
+        isLogin={true}
+    ></Promo>
+
+
+    <div class="container">
+        <Prizes
+            items={prizes}
+            modalText="Boost your chances —<br> Shop on FunPay"
+            buttonText="Go shopping"
+        ></Prizes>
+
+        <MyTickets
+            title="My tickets"
+            myTicketsText1="Every"
+            myTicketsText2="100 RUB"
+            myTicketsText3="spent on FunPay ="
+            myTicketsText4="1 ticket"
+            note="The more tickets you collect, the higher your chances of&nbsp;grabbing epic prizes!"
+            myTicketsBoxTitle1="You’ve got:"
+            myTicketsBoxTitle2="37 tickets"
+            myTicketsBoxText="<p>Total participants: <span class='ticket-participants'>235&nbsp;6589</span></p><p>Average tickets per player: <span class='ticket-average'>15</span></p>"
+            buttonText="View my tickets"
+            items={myTickets}
+            tableParamName="Order"
+            tableValueName="Tickets"
+        ></MyTickets>
+
+        <Instructions
+            title="How to Join?"
+            items={instructions}
+            note="Note: Only purchases made between August 15&nbsp;and September 15&nbsp;are eligible for participation. Shop on&nbsp;FunPay and loot away!"
+        ></Instructions>
+
+        <Faq
+            title="Questions?"
+            items={faq}
+        ></Faq>
+    </div>
+</Layout>

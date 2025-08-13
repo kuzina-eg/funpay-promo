@@ -226,7 +226,7 @@ const faq = [
         countdownDays="дней"
         countdownHours="часов"
         countdownMinutes="минут"
-        isLogin="true"
+        isLogin={true}
     ></Promo>
 
 
@@ -246,7 +246,7 @@ const faq = [
             note="Чем больше билетов собрано, тем выше шанс залутать ценные призы."
             myTicketsBoxTitle1="У вас"
             myTicketsBoxTitle2="37 билетиков"
-            myTicketsBoxText="<p>Всего участников: <span class='ticket-participants'>235 6589</span></p><p>Среднее число билетов на участника: <span class='ticket-average'>15</span></p>"
+            myTicketsBoxText="<p>Всего участников: <span class='ticket-participants'>235&nbsp;6589</span></p><p>Среднее число билетов на участника: <span class='ticket-average'>15</span></p>"
             buttonText="Посмотреть мои билеты"
             items={myTickets}
             tableParamName="Заказ"
@@ -264,10 +264,4 @@ const faq = [
             items={faq}
         ></Faq>
     </div>
-
-    <Fragment slot="modals">
-        <!--
-        <ModalLogin class="modal-login"></ModalLogin>
-        -->
-    </Fragment>
 </Layout>
