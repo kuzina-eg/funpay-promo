@@ -12,7 +12,6 @@ html {
 	position: relative;
 	height: 100%;
     font-size: 87.5%;
-    background: $base-background;
     scroll-behavior: smooth;
 
     @include media-min(mob) {
@@ -22,7 +21,6 @@ html {
 
 body {
 	height: 100%;
-    background: $base-background;
 	-webkit-font-smoothing: antialiased;
 	text-decoration-skip: objects;
 	text-rendering: optimizeLegibility;
@@ -143,14 +141,7 @@ a, button, select {
 
 
 .lootery {
-    #header,
-    .wrapper-footer {
-        background: $color-white;
-    }
-
-    .navbar-default,
-    #footer {
-        border-color: transparent;
-    }
-    //background-color: ;
+    padding-top: $space;
+    padding-bottom: $space;
+    background-color: $base-background;
 }

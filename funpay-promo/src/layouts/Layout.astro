@@ -39,9 +39,9 @@ const {
     </head>
 	<body class={bodyClass ? bodyClass : ''}>
 		<div class="wrapper">
-			<main class={(mainClass ? mainClass : '') + ' main'}>
+			<div class="lootery">
 				<slot />
-			</main>
+			</div>
 		</div>
 
         <slot name="modals"></slot>
