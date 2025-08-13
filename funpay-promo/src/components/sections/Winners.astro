@@ -1,0 +1,119 @@
+---
+import Button from '@components/modules/Button.astro';
+import Picture from '@components/modules/Picture.astro';
+import WinnerList from '@components/blocks/WinnerList.astro';
+
+interface Props {
+    title?: string;
+    items?: Array<string>;
+    winnerName?: string;
+    ticket?: string;
+    modalText?: string;
+    buttonText?: string;
+    class?: string;
+    [x: string]: any;
+}
+
+const {
+    title,
+    items = [],
+    winnerName,
+    ticket,
+    modalText,
+    buttonText,
+    class: className,
+    ...rest
+} = Astro.props;
+
+---
+<section class="lootery-winners lootery-section">
+    <h2 class="lootery-winners__title" set:html={title}></h2>
+
+    <div class="lootery-winners__list">
+        {items.map((item, index) => (
+            <div class="item-winner">
+                { index == 0 ?
+                    <div class="item-winner__crown">
+                        <Picture
+                            class="item-winner__crown-image"
+                            name="crown"
+                            directory="img/lootery/finish/"
+                            type="png"
+                            imageWidth="29"
+                            imageHeight="18"
+                        ></Picture>
+                    </div>
+                    :
+                    ''
+                }
+                <div class="item-winner__avatar">
+                    { item.avatar ?
+                        <Picture
+                            class="item-winner__image"
+                            name={item.avatar}
+                            directory="img/lootery/content/"
+                            type="png"
+                            imageWidth="50"
+                            imageHeight="50"
+                        ></Picture>
+                        :
+                        <Picture
+                            class="item-winner__image"
+                            name="no-photo"
+                            directory="img/lootery/"
+                            type="png"
+                            imageWidth="50"
+                            imageHeight="50"
+                        ></Picture>
+                    }
+                </div>
+                <div class="item-winner__detail">
+                    <div class="item-winner__title"><a href=`#${item.image}` class="item-winner__link" data-fancybox set:html={item.title}></a></div>
+                    { item.isDetail ?
+                        <div class="item-winner__winner-info">
+                            {winnerName}: {item.user}<br>
+                            {ticket}: {item.ticket}
+                        </div>
+                        :
+                        ''
+                    }
+                </div>
+                <div class="item-winner__more">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.125 10H16.875"/><path d="M11.25 4.375L16.875 10L11.25 15.625"/></svg>
+                </div>
+            </div>
+        ))}
+    </div>
+
+    {items.map((item, index) => (
+        <div class="lootery-modal lootery-modal--result" id={item.image} style="display: none;">
+            <div class="lootery-modal__photo">
+                <Picture
+                    class="lootery-modal__image"
+                    name={item.image}
+                    directory="img/lootery/prizes/"
+                    type="png"
+                    imageWidth="500"
+                    imageHeight="400"
+                ></Picture>
+            </div>
+            <h3 class="lootery-modal__title" set:html={item.title}></h3>
+            <div class="lootery-modal__action">
+                <div class="lootery-modal__action-result" set:html={modalText}></div>
+            </div>
+            <WinnerList
+                items={item.winners}
+            ></WinnerList>
+        </div>
+    ))}
+    <div class="lootery-winners__photo">
+        <Picture
+            class="lootery-winners__image"
+            name="poro"
+            directory="img/lootery/finish/"
+            type="png"
+            imageWidth="203"
+            imageHeight="203"
+        ></Picture>
+    </div>
+</section>

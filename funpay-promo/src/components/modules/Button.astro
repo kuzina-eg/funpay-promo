@@ -4,7 +4,7 @@ import Icon from '@components/modules/Icon.astro';
 interface Props {
     type?: 'button' | 'submit' | 'link' | 'span';
     size?: 'sm' | 'lg';
-    style?: 'second' | 'light' | 'link' | 'outline';
+    style?: 'second' | 'third' | 'light' | 'link' | 'outline';
     fill?: boolean;
     center?: boolean;
     href?: string;
@@ -47,6 +47,7 @@ let buttonClass = 'ui-button';
 
 const styles = {
     second: `${buttonClass}--second`,
+    third: `${buttonClass}--third`,
     light: `${buttonClass}--light`,
     link: `${buttonClass}--link`,
     outline: `${buttonClass}--outline`,

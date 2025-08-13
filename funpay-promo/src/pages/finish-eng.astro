@@ -1,0 +1,125 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Picture from '@components/modules/Picture.astro';
+
+import FinishPromo from '@components/sections/FinishPromo.astro';
+import Winners from '@components/sections/Winners.astro';
+
+const prizes = [
+    {
+        title: 'The ultimate gaming rig',
+        count: '1 шт.',
+        image: 'pc',
+        avatar: '01',
+        user: 'Lootkiller',
+        ticket: '№7362-9053',
+        winners: ['KiskaMoriska'],
+        isDetail: true,
+    },
+    {
+        title: 'Playstation 5 Pro',
+        count: '3 шт.',
+        image: 'playstation',
+        avatar: '02',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet'],
+    },
+    {
+        title: 'Xbox Series X',
+        count: '3 шт.',
+        image: 'xbox',
+        avatar: '03',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet'],
+    },
+    {
+        title: 'iPhone 16 Pro Max',
+        count: '3 шт.',
+        image: 'iphone',
+        avatar: '',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet'],
+    },
+    {
+        title: 'Nintendo Switch&nbsp;2',
+        count: '3 шт.',
+        image: 'nintendo',
+        avatar: '',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet'],
+    },
+    {
+        title: 'Steam Deck OLED',
+        count: '3 шт.',
+        image: 'steam',
+        avatar: '04',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet'],
+    },
+    {
+        title: 'Tablet Red Magic Gaming Pad&nbsp;3',
+        count: '3 шт.',
+        image: 'redmagic',
+        avatar: '',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet'],
+    },
+    {
+        title: 'Headphones Audeze Maxwell',
+        count: '5 шт.',
+        image: 'audeze',
+        avatar: '',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball'],
+    },
+    {
+        title: 'Headphones Moondrop Blessing 3',
+        count: '5 шт.',
+        image: 'moondrop',
+        avatar: '05',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball'],
+    },
+    {
+        title: 'Razer Viper V3&nbsp;Pro',
+        count: '10 шт.',
+        image: 'razer',
+        avatar: '06',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball'],
+    },
+    {
+        title: '10k RUB',
+        count: '50 шт.',
+        image: 'games10',
+        avatar: '',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball'],
+    },
+    {
+        title: '5k RUB',
+        count: '100 шт.',
+        image: 'games5',
+        avatar: '',
+        winners: ['Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball','Architekto_bz','trallalelo','shaska-pulemet','annapipka','rock&ball'],
+    },
+]
+
+---
+<Layout title="Лутерея" bodyClass="lootery">
+
+    <FinishPromo
+        noteText="Thanks for playing!"
+        title="The Loottery is over"
+        titleWinner="The Loottery is over"
+        text="Watch the draw replay on Twitch"
+        buttonText="Watch results on Twitch"
+        isWinner={false}
+        boxTitle="No loot this time"
+        boxTitleWinner="Congratulations! You’ve won:<br> Nintendo Switch 2"
+        boxText="Better luck next round! Don&rsquo;t lose faith&nbsp;&mdash; more giveaways are on&nbsp;the way!"
+        boxTextWinner="Whoa, that’s some luck!<br> We’ll contact you via FunPay messages to arrange prize delivery.<br> May the RNG gods smile on you again soon."
+        myTicketsBoxTitle1="Winning ticket:"
+    ></FinishPromo>
+
+    <div class="container">
+        <Winners
+            title="Winners"
+            items={prizes}
+            winnerName="Winner"
+            ticket="Ticket"
+            modalText="This prize has been looted!"
+        ></Winners>
+
+    </div>
+</Layout>

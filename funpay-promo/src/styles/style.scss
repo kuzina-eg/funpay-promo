@@ -24,6 +24,7 @@
 @use "./blocks/ticketText";
 @use "./blocks/instructionItem";
 @use "./blocks/tableTicket";
+@use "./blocks/winnerItem";
 
 // Site sections
 @use "./sections/promo";
@@ -31,5 +32,7 @@
 @use "./sections/myTickets";
 @use "./sections/instructions";
 @use "./sections/faq";
+@use "./sections/finish";
+@use "./sections/winners";
 
 
