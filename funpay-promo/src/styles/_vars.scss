@@ -33,37 +33,19 @@
 :root {
     --color-base: #151515;
     --color-base-rgb: 21,21,21;
-    //--color-gradient-start: #25ABE4;
     --color-accent: #255FE4; //+
     --color-accent-rgb: 37,95,228;
-    //--color-accent-all: #255FE4;
     --color-accent-hover: #0E47CB;
     --color-second: #E9EFFC;
     --color-second-hover: #DBE4F9;
-    //--color-second-rgb: 168,191,244;
-    //--color-second-primary: #D3DFF9;
-    //--color-second-light: #A8BFF4;
     --color-white: #FFFFFF; //+
-    //--color-white-all: #FFFFFF;
     --color-white-rgb: 255,255,255; //+
     --color-black: #07122E; //+
-    //--color-black-all: #07122E;
     --color-grey-dark: #364157; //+
     --color-grey: #666E81; //+
-    //--color-grey-all: #666E81;
     --color-grey-light: #959CAA; //+
-    //--color-grey-light-all: #959CAA;
-    //--color-grey-light-second: #F5F6FB;
-    //--color-footer: #818DA6;
-
     --color-disabled: #E0E2E6;
-    --color-error: #F44336;
-    --color-warning: #FFAF35;
-    --color-success: #38A169;
-    --color-border: transparent;
-    --color-line: #E9EBF6;
 
-    //--background-chat: #FFFFFF;
     --background-backdrop: rgba(0,0,0,.8);
 }
 
@@ -85,18 +67,8 @@
     --space-lg: 2rem;
     --space-section: 6.25rem;
     --duration: .3s;
-    //--box-shadow-light: 0 4px 40px rgba(35,42,72,.06);
-    //--box-shadow: 0 0 10px rgba(0,26,89,.1);
-    //--z-index-alert: 300;
-    //--z-index-search-backdrop: 100;
-    //--z-index-header: 110;
-    //--z-index-filter: 120;
-    //--z-index-mobile: 120;
-    //--z-index-sorting: 130;
-    //--z-index-modal: 200;
-    //--z-index-product-modal: 120;
 
-    @include media(mob) {
+    @include media(mob-md) {
         --space-section: 60px;
     }
 
@@ -109,47 +81,14 @@
 // Sizes
 
 :root {
-    --header-height: 72px;
-    --header-fixed-height: 72px;
-    --footer-height: 188px;
-    --logo-width: 6.25rem;
-    --logo-height: 2.5rem;
-    --icon-size-sm: 1rem;
     --icon-size: 24px;
-    --icon-size-md: 2rem;
-    --icon-size-lg: 2.625rem;
-    --star-size: 16px;
-    --star-space: 2px;
     --radius-xs: .5rem;
     --radius-sm: .75rem;
     --radius: 1rem;
     --radius-md: 1.25rem;
     --radius-lg: 1.5rem;
 
-    //--button-height-xs: 36px;
-    //--button-height-sm: 44px;
     --button-height: 44px; //+
     --button-height-md: 48px;
     --button-height-lg: 60px;
-    --input-height-sm: 44px;
-    --input-height: 48px;
-    --input-height-lg: 3.75rem;
-
-    --game-border: 4px;
-
-    @include media(pc) {
-        --header-height: 64px;
-        --header-fixed-height: 64px;
-    }
-
-    @include media(mob-md) {
-        --header-height: 112px;
-        --header-fixed-height: 64px;
-        --game-border: 3px;
-    }
-}
-
-:root {
-    --sticky-offset-top: calc(var(--header-fixed-height) + 16px);
-    --sticky-offset-bottom: var(--space,16px);
 }

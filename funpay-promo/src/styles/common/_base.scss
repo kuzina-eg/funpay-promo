@@ -26,11 +26,6 @@ body {
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;
-	font-family: $base-font-family;
-	font-weight: $base-font-weight;
-	font-size: $text-size;
-	line-height: $base-line-height;
-	color: $color-base;
 }
 
 p {
@@ -43,7 +38,6 @@ p {
 
 a {
 	color: $color-accent;
-    text-decoration: underline;
 	transition: $duration ease;
 
     &:hover {
@@ -144,4 +138,9 @@ a, button, select {
     padding-top: $space;
     padding-bottom: $space;
     background-color: $base-background;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    font-size: $text-size;
+    line-height: $base-line-height;
+    color: $color-base;
 }

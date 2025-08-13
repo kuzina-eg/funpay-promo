@@ -85,6 +85,8 @@
 
     &__button {
         margin-top: 30px;
+        position: relative;
+        z-index: 10;
 
         .ui-button {
             min-width: 16.25rem;

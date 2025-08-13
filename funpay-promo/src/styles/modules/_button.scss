@@ -7,7 +7,7 @@
 	justify-content: center;
     gap: 8px;
     padding: 0 14px;
-    background-color: $color-accent-all;
+    background-color: $color-accent;
     border: none;
     border-radius: $radius-xs;
     box-shadow: none;
@@ -76,7 +76,7 @@
         top: -2px;
         right: 2px;
         transform: translateX(50%);
-        background-color: $color-accent-all;
+        background-color: $color-accent;
         border-radius: 2rem;
         padding: 0 3px;
         min-width: 13px;
@@ -162,12 +162,6 @@
             background-color: $color-second;
             color: $color-accent;
         }
-    }
-
-    &--danger {
-        background: linear-gradient(102.39deg, rgba(244, 67, 54, 0.1) -12.81%, rgba(255, 64, 99, 0.1) 111.42%);
-        pointer-events: none;
-        color: $color-error;
     }
 
     &--link {

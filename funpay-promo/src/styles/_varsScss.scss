@@ -19,37 +19,19 @@ $title-size-lg: var(--title-size-lg, 2.75rem);
 
 $color-base: var(--color-base, #151515);
 $color-base-rgb: var(--color-base-rgb, 21,21,21);
-$color-gradient-start: var(--color-gradient-start, #25ABE4);
 $color-accent: var(--color-accent, #255FE4);
 $color-accent-rgb: var(--color-accent-rgb, 37,95,228);
-$color-accent-all: var(--color-accent-all, #255FE4);
 $color-accent-hover: var(--color-accent-hover, #0E47CB);
 $color-second: var(--color-second, #E9EFFC);
 $color-second-hover: var(--color-second-hover, #DBE4F9);
-$color-second-rgb: var(--color-second-rgb, 168,191,244);
-$color-second-primary: var(--color-second-primary, #D3DFF9);
-$color-second-light: var(--color-second-light, #A8BFF4);
 $color-white: var(--color-white, #FFFFFF);
-$color-white-all: var(--color-white-all, #FFFFFF);
 $color-white-rgb: var(--color-white-rgb, 255,255,255);
 $color-black: var(--color-black, #07122E);
-$color-black-all: var(--color-black-all, #07122E);
 $color-grey-dark: var(--color-grey-dark, #364157);
 $color-grey: var(--color-grey, #666E81);
-$color-grey-all: var(--color-grey-all, #666E81);
 $color-grey-light: var(--color-grey-light, #959CAA);
-$color-grey-light-all: var(--color-grey-light-all, #959CAA);
-$color-grey-light-second: var(--color-grey-light-second, #F5F6FB);
-$color-footer: var(--color-footer, #818DA6);
-
 $color-disabled: var(--color-disabled, #E0E2E6);
-$color-error: var(--color-error, #F44336); //temp
-$color-warning: var(--color-warning, #FFAF35); //temp
-$color-success: var(--color-success, #38A169); //temp
-$color-border: var(--color-border, transparent);
-$color-line: var(--color-line, #E9EBF6);
 
-$background-chat: var(--background-chat, #FFFFFF);
 $background-backdrop: var(--background-backdrop, rgba(0,0,0,.8));
 
 
@@ -69,44 +51,17 @@ $space-md: var(--space-md, 24px);
 $space-lg: var(--space-lg, 2rem);
 $space-section: var(--space-section, 6.25rem);
 $duration: var(--duration, .3s);
-$box-shadow-light: var(--box-shadow-light, 0 4px 40px rgba(35,42,72,.06));
-$box-shadow: var(--box-shadow, 0 0 10px rgba(0,26,89,.1));
-$z-index-alert: var(--z-index-alert, 300);
-$z-index-search-backdrop: var(--z-index-search-backdrop, 100);
-$z-index-header: var(--z-index-header, 110);
-$z-index-filter: var(--z-index-filter, 120);
-$z-index-mobile: var(--z-index-mobile, 120);
-$z-index-sorting: var(--z-index-mobile, 130);
-$z-index-modal: var(--z-index-modal, 200);
-$z-index-product-modal: var(--z-index-product-modal, 120);
 
 
 // Sizes
 
-$header-height: var(--header-height, 72px);
-$header-fixed-height: var(--header-fixed-height, 72px); //temp
-$footer-height: var(--footer-height, 188px);
-$logo-width: var(--logo-width, 6.25rem);
-$logo-height: var(--logo-height, 2.5rem);
-$icon-size-sm: var(--icon-size-sm, 1rem);
 $icon-size: var(--icon-size, 24px); //1.5rem?
-$icon-size-md: var(--icon-size-md, 2rem);
-$icon-size-lg: var(--icon-size-lg, 2.625rem);
-$star-size: var(--star-size, 16px);
-$star-space: var(--star-space, 2px);
 $radius-xs: var(--radius-xs, .5rem);
 $radius-sm: var(--radius-sm, .75rem);
 $radius: var(--radius, 1rem);
 $radius-md: var(--radius-md, 1.25rem);
 $radius-lg: var(--radius-lg, 1.5rem);
 
-//$button-height-xs: var(--button-height-xs, 36px);
-//$button-height-sm: var(--button-height-sm, 44px);
 $button-height: var(--button-height, 44px);
 $button-height-md: var(--button-height-md, 3rem);
 $button-height-lg: var(--button-height-lg, 3.75rem);
-$input-height-sm: var(--input-height-sm, 44px);
-$input-height: var(--input-height, 48px);
-$input-height-lg: var(--input-height-lg, 3.75rem);
-
-$game-border: var(--game-border, 4px);
