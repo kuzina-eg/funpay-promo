@@ -90,17 +90,6 @@ img {
     }
 }
 
-//.container {
-//	margin: 0 auto;
-//	padding: 0 $gutters;
-//	width: 100%;
-//	max-width: calc($container-max-width + $gutters * 2);
-//
-//	&_fluid {
-//		max-width: none;
-//	}
-//}
-
 .lootery-section {
     padding-top: calc($space-section * .5);
     padding-bottom: calc($space-section * .5);
@@ -138,6 +127,10 @@ a, button, select {
     padding-top: $space;
     padding-bottom: $space;
     background-color: $base-background;
+    border-top: #e4e4e4 1px solid;
+    border-bottom: #e4e4e4 1px solid;
+    margin-top: -1px;
+    margin-bottom: -1px;
     font-family: $base-font-family;
     font-weight: $base-font-weight;
     font-size: $text-size;
