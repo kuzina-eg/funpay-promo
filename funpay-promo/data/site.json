@@ -76,6 +76,12 @@
             "link": "finish-winner-ua.html",
             "status": "",
             "disabled": false
+        },
+        {
+            "name": "Главная с шапкой и футером",
+            "link": "with-header-footer.html",
+            "status": "",
+            "disabled": false
         }
     ]
 }

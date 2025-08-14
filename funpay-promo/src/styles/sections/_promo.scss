@@ -110,13 +110,17 @@
             margin-right: -20%;
             margin-bottom: 38px;
         }
+
+        @include media(mob) {
+            aspect-ratio: 560 / 460;
+        }
     }
 
     &__bg {
         position: absolute;
-        top: 15.5%;
+        top: 17%;
         left: 0;
-        bottom: 12%;
+        bottom: 11%;
         right: 0;
         z-index: -1;
         background: linear-gradient(270deg, #77DC42 0%, #FFD011 50%, #AC4CFF 100%);
