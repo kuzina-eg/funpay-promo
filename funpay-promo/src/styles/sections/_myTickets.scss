@@ -99,6 +99,11 @@
         }
 
         &-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: .3rem;
             font-size: 16px;
             font-weight: 700;
             line-height: 1.4;
