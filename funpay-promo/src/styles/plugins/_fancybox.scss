@@ -100,6 +100,19 @@
         outline-offset: 8px;
     }
 
+    a:hover,
+    a:focus-visible,
+    a:focus {
+        text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline: $color-accent 2px solid;
+        outline-offset: 2px;
+        box-shadow: none;
+    }
+
     &__photo {
         margin-bottom: 10px;
         margin-left: -10px;

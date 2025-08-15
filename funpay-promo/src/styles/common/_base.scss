@@ -9,35 +9,6 @@ html {
     }
 }
 
-//.wrapper {
-//	position: relative;
-//	display: flex;
-//	flex-direction: column;
-//    overflow-x: clip;
-//	min-width: 350px;
-//	min-height: 100vh;
-//}
-//
-.lootery-section {
-    padding-top: calc($space-section * .5);
-    padding-bottom: calc($space-section * .5);
-
-    &__title {
-        text-align: center;
-        font-size: 24px;
-        line-height: 1;
-        font-weight: 700;
-
-        @include media-min(mob-md) {
-            font-size: 36px;
-        }
-
-        @include media-min(mob) {
-            font-size: 4rem;
-        }
-    }
-}
-
 .lootery {
     padding-top: $space;
     padding-bottom: $space;
@@ -63,10 +34,7 @@ html {
     a {
         transition: $duration ease;
 
-        &:hover {
-            text-decoration: none;
-        }
-
+        &:hover,
         &:focus {
             text-decoration: none;
         }
@@ -101,5 +69,25 @@ html {
     ::selection {
         background: $color-accent;
         color: $color-white;
+    }
+}
+
+.lootery-section {
+    padding-top: calc($space-section * .5);
+    padding-bottom: calc($space-section * .5);
+
+    &__title {
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+        font-weight: 700;
+
+        @include media-min(mob-md) {
+            font-size: 36px;
+        }
+
+        @include media-min(mob) {
+            font-size: 4rem;
+        }
     }
 }
