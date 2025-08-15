@@ -89,7 +89,7 @@
 
         &:focus-visible {
             outline-color: $color-accent;
-            outline-offset: -6px;
+            outline-offset: -6px !important;
         }
     }
 
@@ -98,10 +98,6 @@
         color: $color-grey-light;
         font-size: $text-size;
         line-height: 1.6;
-
-        a {
-            text-decoration: underline;
-        }
     }
 
     &__content {

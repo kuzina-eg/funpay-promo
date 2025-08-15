@@ -18,4 +18,9 @@
         gap: $space-sm;
         flex-direction: column;
     }
+
+    a {
+        color: $color-accent;
+        text-decoration: underline;
+    }
 }
