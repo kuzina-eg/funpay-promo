@@ -90,6 +90,11 @@
     width: 555px;
     max-width: 100%;
     box-shadow: 0 0 60px rgba(0,0,0,.15);
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    font-size: $text-size;
+    line-height: $base-line-height;
+    color: $color-base;
 
     @include media-min(mob-md) {
         padding: 20px 30px 20px;
