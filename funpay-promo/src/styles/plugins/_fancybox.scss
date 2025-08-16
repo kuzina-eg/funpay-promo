@@ -113,6 +113,12 @@
         box-shadow: none;
     }
 
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
     &__photo {
         margin-bottom: 10px;
         margin-left: -10px;
